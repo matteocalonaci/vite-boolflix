@@ -4,11 +4,11 @@ import store from '../data/store.js';
 export default {
     name: "FilmCard",
     props: {
-
+        movie: Object
     },
     data() {
         return {
-
+            store
         }
     }
 }
@@ -16,11 +16,12 @@ export default {
 <template>
     <div class="card col-2 myBg">
         <div class="img bg-warning">
-            <img src="">
+            <img :src="movie">
         </div>
-        <h5 class=" text-center text-white p-2">{{ }}</h5>
-        <p class=" text-center text-white p-2">{{ }}</p>
-
+        <h5 class=" text-center text-white p-2">Titolo:{{ movie.title }}</h5>
+        <h5 class=" text-center text-white p-2">Titolo Originale:{{ movie.original_title }}</h5>
+        <p class=" text-center text-white p-2">Lingua:{{ movie.original_language }}</p>
+        <p class=" text-center text-white p-2">Voto:{{ movie.vote_average }}</p>
     </div>
 </template>
 

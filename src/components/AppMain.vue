@@ -1,6 +1,8 @@
 <!-- JS -->
 <script>
 import FilmCard from "./FilmCard.vue";
+import store from '../data/store.js';
+
 
 
 
@@ -12,7 +14,7 @@ export default {
 
     data() {
         return {
-
+            store
         }
 
     },
@@ -27,7 +29,7 @@ export default {
 
         <div class="container">
             <div class="row d-flex justify-content-between min-height ">
-                <FilmCard />
+                <FilmCard v-for="movie in store.movies" :movie="movie" />
 
 
             </div>

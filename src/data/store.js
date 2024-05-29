@@ -2,8 +2,9 @@ import { reactive } from 'vue';
 
 const iMieiDati = reactive({
 
-   movies:[],
+    url: 'https://api.themoviedb.org/3/search/movie',
+    movies:[],
+  
 
 });
-
 export default iMieiDati;
