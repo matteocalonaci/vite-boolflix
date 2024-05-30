@@ -19,6 +19,24 @@ export default {
         <h5 class=" text-center text-white p-2">Titolo:{{ movie.title }}</h5>
         <h5 class=" text-center text-white p-2">Titolo Originale:{{ movie.original_title }}</h5>
         <p class=" text-center text-white p-2">Lingua:{{ movie.original_language }}</p>
+        <p class="card-text my-fs py-2s text-center text-dark" v-if="movie.original_language == 'en'">
+            <img src="../assets/usa.svg" class="w-25" alt="">
+        </p>
+        <p class="card-text my-fs py-2s text-center text-dark" v-if="movie.original_language == 'pl'">
+            <img src="../assets/pl.svg" class="w-25" alt="">
+        </p>
+        <p class="card-text my-fs py-2s text-center text-dark" v-if="movie.original_language == 'zh'">
+            <img src="../assets/zh.svg" class="w-25" alt="">
+        </p>
+        <p class="card-text my-fs py-2s text-center text-dark" v-if="movie.original_language == 'ko'">
+            <img src="../assets/ko.svg" class="w-25" alt="">
+        </p>
+        <p class="card-text my-fs py-2s text-center text-dark" v-if="movie.original_language == 'ja'">
+            <img src="../assets/ja.svg" class="w-25" alt="">
+        </p>
+        <p class="card-text my-fs py-2s text-center text-dark" v-if="movie.original_language == 'pt'">
+            <img src="../assets/pt.svg" class="w-25" alt="">
+        </p>
         <p class=" text-center text-white p-2">Voto:{{ movie.vote_average }}</p>
     </div>
 </template>
@@ -40,5 +58,9 @@ export default {
 .myBg {
     background-color: orange;
     /* background-color: rgb(212, 143, 56); */
+}
+
+h5 {
+    font-size: 1rem;
 }
 </style>
