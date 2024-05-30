@@ -1,9 +1,12 @@
 import { reactive } from 'vue';
 
 const iMieiDati = reactive({
-
-    url: 'https://api.themoviedb.org/3/search/movie',
+    searchString: "",
+    moviesUrl: 'https://api.themoviedb.org/3/trending/movie/day?language=en-US',
     movies:[],
+    seriesUrl:'https://api.themoviedb.org/3/trending/tv/day?language=it-IT',
+    series:[],
+    urlImage: "https://image.tmdb.org/t/p/w1280",
   
 
 });
