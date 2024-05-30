@@ -8,6 +8,7 @@ const iMieiDati = reactive({
     series:[],
     urlImage: "https://image.tmdb.org/t/p/w1280",
   
-
+    moviesInput:"",
+    seriesInput:""
 });
 export default iMieiDati;

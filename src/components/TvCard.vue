@@ -55,8 +55,8 @@ export default {
 }
 
 .myBg {
-    background-color: orange;
-    /* background-color: rgb(212, 143, 56); */
+    background-color: rgba(0, 0, 0, 0.200);
+
 }
 
 h5 {

@@ -17,7 +17,7 @@ export default {
         //     console.log("cercato:", this.searchString);
         // },
         getMovies() {
-            this.store.movies = "Film";
+            this.store.moviesInput = "film";
             const options = {
                 method: 'GET',
                 url: this.store.moviesUrl,
@@ -42,7 +42,7 @@ export default {
         },
 
         getSeries() {
-            this.store.series = "Series";
+            this.store.seriesInput = "series";
             const options = {
                 method: 'GET',
                 url: this.store.seriesUrl,
