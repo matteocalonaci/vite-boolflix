@@ -84,7 +84,7 @@ export default {
                 <div class="col-1"></div>
                 <div class="col-10 d-flex justify-content-end align-items-center">
                     <input type="text" v-model="this.store.searchString" placeholder="Cosa vuoi vedere oggi?">
-                    <button @click="getMovies(), getSeries()">SEARCH</button>
+                    <button @click="getMovies(), getSeries()">Search</button>
 
                 </div>
             </div>
@@ -100,5 +100,21 @@ header {
 
 img {
     width: 10rem;
+}
+
+input {
+    border-radius: 0.5rem;
+    padding: 0.2rem;
+    border: 0.1rem solid white;
+    margin-right: 0.2rem;
+}
+
+button {
+    border-radius: 0.5rem;
+    padding: 0.2rem;
+    background-color: red;
+    border: 0.1rem solid red;
+    color: rgba(0, 0, 0, 0.6);
+
 }
 </style>
