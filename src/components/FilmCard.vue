@@ -14,51 +14,52 @@ export default {
 <template>
     <div class="card col-2 myBg">
         <div class="img bg-warning">
-            <img :src='store.urlImage + movie.backdrop_path'>
+            <img :src='store.urlImage + movie.poster_path'>
+            <div class="info p-4">
+                <h5 class=" text-center text-white p-2">Titolo:{{ movie.title }}</h5>
+                <h5 class=" text-center text-white p-2">Titolo Originale:{{ movie.original_title }}</h5>
+                <p class=" text-center text-white p-2">Lingua:{{ movie.original_language }}</p>
+                <p class="card-text my-fs py-2s text-center" v-if="movie.original_language == 'en'">
+                    <img src="../assets/usa.svg" class="w-25" alt="">
+                </p>
+                <p class="card-text my-fs py-2s text-center text-dark" v-if="movie.original_language == 'pl'">
+                    <img src="../assets/pl.svg" class="w-25" alt="">
+                </p>
+                <p class="card-text my-fs py-2s text-center text-dark" v-if="movie.original_language == 'zh'">
+                    <img src="../assets/zh.svg" class="w-25" alt="">
+                </p>
+                <p class="card-text my-fs py-2s text-center text-dark" v-if="movie.original_language == 'ko'">
+                    <img src="../assets/ko.svg" class="w-25" alt="">
+                </p>
+                <p class="card-text my-fs py-2s text-center text-dark" v-if="movie.original_language == 'ja'">
+                    <img src="../assets/ja.svg" class="w-25" alt="">
+                </p>
+                <p class="card-text my-fs py-2s text-center text-dark" v-if="movie.original_language == 'pt'">
+                    <img src="../assets/pt.svg" class="w-25" alt="">
+                </p>
+                <p class="card-text my-fs py-2s text-center text-white">
+                    Voti: {{ (movie.vote_average / 2).toFixed(1) }}
+                    <!-- AGGIUNTA STELLE IN BASE AL VOTO E DIVISO PER 2 -->
+                <div class="text-center mb-1">
+                    <span v-if="(movie.vote_average / 2) >= 0.5">
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                    </span>
+                    <span v-if="(movie.vote_average / 2) >= 1.5">
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                    </span>
+                    <span v-if="(movie.vote_average / 2) >= 2.5">
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                    </span>
+                    <span v-if="(movie.vote_average / 2) >= 3.5">
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                    </span>
+                    <span v-if="(movie.vote_average / 2) >= 4.5">
+                        <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                    </span>
+                </div>
+                </p>
+            </div>
         </div>
-        <h5 class=" text-center text-white p-2">Titolo:{{ movie.title }}</h5>
-        <h5 class=" text-center text-white p-2">Titolo Originale:{{ movie.original_title }}</h5>
-        <p class=" text-center text-white p-2">Lingua:{{ movie.original_language }}</p>
-        <p class="card-text my-fs py-2s text-center" v-if="movie.original_language == 'en'">
-            <img src="../assets/usa.svg" class="w-25" alt="">
-        </p>
-        <p class="card-text my-fs py-2s text-center text-dark" v-if="movie.original_language == 'pl'">
-            <img src="../assets/pl.svg" class="w-25" alt="">
-        </p>
-        <p class="card-text my-fs py-2s text-center text-dark" v-if="movie.original_language == 'zh'">
-            <img src="../assets/zh.svg" class="w-25" alt="">
-        </p>
-        <p class="card-text my-fs py-2s text-center text-dark" v-if="movie.original_language == 'ko'">
-            <img src="../assets/ko.svg" class="w-25" alt="">
-        </p>
-        <p class="card-text my-fs py-2s text-center text-dark" v-if="movie.original_language == 'ja'">
-            <img src="../assets/ja.svg" class="w-25" alt="">
-        </p>
-        <p class="card-text my-fs py-2s text-center text-dark" v-if="movie.original_language == 'pt'">
-            <img src="../assets/pt.svg" class="w-25" alt="">
-        </p>
-        <p class="card-text my-fs py-2s text-center text-white">
-            Voti: {{ (movie.vote_average / 2).toFixed(1) }}
-            <!-- AGGIUNTA STELLE IN BASE AL VOTO E DIVISO PER 2 -->
-        <div class="text-center mb-1">
-            <span v-if="(movie.vote_average / 2) >= 0.5">
-                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-            </span>
-            <span v-if="(movie.vote_average / 2) >= 1.5">
-                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-            </span>
-            <span v-if="(movie.vote_average / 2) >= 2.5">
-                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-            </span>
-            <span v-if="(movie.vote_average / 2) >= 3.5">
-                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-            </span>
-            <span v-if="(movie.vote_average / 2) >= 4.5">
-                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
-            </span>
-        </div>
-        </p>
-
     </div>
 </template>
 
@@ -84,8 +85,18 @@ h5 {
     font-size: 1rem;
 }
 
-.card:hover {
-    opacity: 90;
-    background-color: rgba(255, 192, 203, 0.082);
+
+.info {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    height: 21.3rem;
+}
+
+.info:hover {
+
+    display: block;
+    opacity: 100;
+    background-color: rgba(0, 0, 0, 0.500);
 }
 </style>

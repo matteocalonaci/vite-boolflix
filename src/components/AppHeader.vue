@@ -86,7 +86,7 @@ export default {
                 </div>
                 <div class="col-6 d-flex justify-content-end align-items-center">
                     <input type="text" v-model="this.store.searchString" placeholder="Cosa vuoi vedere oggi?">
-                    <button @click="getMovies(), getConsole()">Search</button>
+                    <button @click="getMovies(), getSeries(), getConsole()">Search</button>
 
                 </div>
             </div>

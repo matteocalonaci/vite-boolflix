@@ -12,53 +12,56 @@ export default {
 }
 </script>
 <template>
-    <div class="card col-2 myBg{
-    opacity: 0;
-}">
+    <div class="card col-2 myBg">
+
+
         <div class="img bg-warning">
-            <img :src='store.urlImage + serie.backdrop_path'>
+            <img :src='store.urlImage + serie.poster_path'>
         </div>
-        <h5 class=" text-center text-white p-2">Titolo: {{ serie.name }}</h5>
-        <h5 class=" text-center text-white p-2">Titolo Originale:{{ serie.name }}</h5>
-        <p class="card-text my-fs py-2s text-center text-dark" v-if="serie.original_language == 'en'">
-            <img src="../assets/usa.svg" class="w-25" alt="">
-        </p>
-        <p class="card-text my-fs py-2s text-center text-dark" v-if="serie.original_language == 'pl'">
-            <img src="../assets/pl.svg" class="w-25" alt="">
-        </p>
-        <p class="card-text my-fs py-2s text-center text-dark" v-if="serie.original_language == 'zh'">
-            <img src="../assets/zh.svg" class="w-25" alt="">
-        </p>
-        <p class="card-text my-fs py-2s text-center text-dark" v-if="serie.original_language == 'ko'">
-            <img src="../assets/ko.svg" class="w-25" alt="">
-        </p>
-        <p class="card-text my-fs py-2s text-center text-dark" v-if="serie.original_language == 'ja'">
-            <img src="../assets/ja.svg" class="w-25" alt="">
-        </p>
-        <p class="card-text my-fs py-2s text-center text-dark" v-if="serie.original_language == 'pt'">
-            <img src="../assets/pt.svg" class="w-25" alt="">
-        </p>
-        <p class="card-text my-fs py-2s text-center text-white">
-            Voti: {{ (serie.vote_average / 2).toFixed(1) }}
-            <!-- AGGIUNTA STELLE IN BASE AL VOTO E DIVISO PER 2 -->
-        <div class="text-center mb-1">
-            <span v-if="(serie.vote_average / 2) >= 1">
-                <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i>
-            </span>
-            <span v-if="(serie.vote_average / 2) >= 2">
-                <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i>
-            </span>
-            <span v-if="(serie.vote_average / 2) >= 3">
-                <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i>
-            </span>
-            <span v-if="(serie.vote_average / 2) >= 4">
-                <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i>
-            </span>
-            <span v-if="(serie.vote_average / 2) >= 5">
-                <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i>
-            </span>
+        <div class="info p-4">
+            <h5 class=" text-center text-white p-2">Titolo: {{ serie.name }}</h5>
+            <h5 class=" text-center text-white p-2">Titolo Originale:{{ serie.name }}</h5>
+            <p class="card-text my-fs py-2s text-center text-dark" v-if="serie.original_language == 'en'">
+                <img src="../assets/usa.svg" class="w-25" alt="">
+            </p>
+            <p class="card-text my-fs py-2s text-center text-dark" v-if="serie.original_language == 'pl'">
+                <img src="../assets/pl.svg" class="w-25" alt="">
+            </p>
+            <p class="card-text my-fs py-2s text-center text-dark" v-if="serie.original_language == 'zh'">
+                <img src="../assets/zh.svg" class="w-25" alt="">
+            </p>
+            <p class="card-text my-fs py-2s text-center text-dark" v-if="serie.original_language == 'ko'">
+                <img src="../assets/ko.svg" class="w-25" alt="">
+            </p>
+            <p class="card-text my-fs py-2s text-center text-dark" v-if="serie.original_language == 'ja'">
+                <img src="../assets/ja.svg" class="w-25" alt="">
+            </p>
+            <p class="card-text my-fs py-2s text-center text-dark" v-if="serie.original_language == 'pt'">
+                <img src="../assets/pt.svg" class="w-25" alt="">
+            </p>
+            <p class="card-text my-fs py-2s text-center text-white">
+                Voti: {{ (serie.vote_average / 2).toFixed(1) }}
+                <!-- AGGIUNTA STELLE IN BASE AL VOTO E DIVISO PER 2 -->
+            <div class="text-center mb-1">
+                <span v-if="(serie.vote_average / 2) >= 1">
+                    <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i>
+                </span>
+                <span v-if="(serie.vote_average / 2) >= 2">
+                    <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i>
+                </span>
+                <span v-if="(serie.vote_average / 2) >= 3">
+                    <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i>
+                </span>
+                <span v-if="(serie.vote_average / 2) >= 4">
+                    <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i>
+                </span>
+                <span v-if="(serie.vote_average / 2) >= 5">
+                    <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i>
+                </span>
+            </div>
+            </p>
         </div>
-        </p>
+
     </div>
 </template>
 
@@ -91,5 +94,19 @@ export default {
 
 h5 {
     font-size: 1rem;
+}
+
+.info {
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    height: 21.3rem;
+}
+
+.info:hover {
+
+    display: block;
+    opacity: 100;
+    background-color: rgba(0, 0, 0, 0.500);
 }
 </style>
