@@ -83,4 +83,9 @@ export default {
 h5 {
     font-size: 1rem;
 }
+
+.card:hover {
+    opacity: 90;
+    background-color: rgba(255, 192, 203, 0.082);
+}
 </style>

@@ -7,8 +7,10 @@ const iMieiDati = reactive({
     seriesUrl:'https://api.themoviedb.org/3/trending/tv/day?language=it-IT',
     series:[],
     urlImage: "https://image.tmdb.org/t/p/w1280",
+
   
-    moviesInput:"",
-    seriesInput:""
+
 });
 export default iMieiDati;
+
+

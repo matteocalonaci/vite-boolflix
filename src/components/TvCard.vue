@@ -12,7 +12,9 @@ export default {
 }
 </script>
 <template>
-    <div class="card col-2 myBg">
+    <div class="card col-2 myBg{
+    opacity: 0;
+}">
         <div class="img bg-warning">
             <img :src='store.urlImage + serie.backdrop_path'>
         </div>
@@ -66,6 +68,14 @@ export default {
     width: calc((100% - 5rem) / 5);
     margin-bottom: 1rem;
     padding: 0.0001rem 0;
+    background-color: rgba(0, 0, 0, 0.200);
+
+
+}
+
+.card:hover {
+    opacity: 90;
+    background-color: rgba(255, 192, 203, 0.082);
 }
 
 .col-2 img {
