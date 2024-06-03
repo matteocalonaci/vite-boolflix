@@ -2,9 +2,9 @@ import { reactive } from 'vue';
 
 const iMieiDati = reactive({
     searchString: "",
-    moviesUrl: 'https://api.themoviedb.org/3/trending/movie/day?language=en-US',
+    moviesUrl: "https://api.themoviedb.org/3/search/movie?api_key=cd9bb08e609470850f56a739b3e6641f&query=",
     movies:[],
-    seriesUrl:'https://api.themoviedb.org/3/trending/tv/day?language=it-IT',
+    seriesUrl:"https://api.themoviedb.org/3/search/tv?api_key=cd9bb08e609470850f56a739b3e6641f&language=it_IT&query=",
     series:[],
     urlImage: "https://image.tmdb.org/t/p/w1280",
 
@@ -12,5 +12,4 @@ const iMieiDati = reactive({
 
 });
 export default iMieiDati;
-
 
